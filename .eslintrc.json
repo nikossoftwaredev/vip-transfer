@@ -1,3 +1,21 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "eslint-config-prettier" // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+  ],
+  "plugins": ["react", "react-hooks", "eslint-plugin-no-relative-import-paths"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "no-undef": "off",
+    "no-unused-vars": "warn",
+    "no-relative-import-paths/no-relative-import-paths": [
+      "warn",
+      {
+        "allowSameFolder": true
+      }
+    ]
+  }
 }
