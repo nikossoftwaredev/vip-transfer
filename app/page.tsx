@@ -6,11 +6,11 @@ export default function Home() {
     <main className="flex h-full items-center justify-center">
       <figure className="absolute w-full top-0 -z-10 brightness-50">
         <img
-          className="max-h-screen w-full object-cover"
+          className="hidden md:block max-h-screen h-screen object-cover"
           src="/images/landing.jpg"
         />
       </figure>
-      <section className=" flex justify-center items-center gap-16 w-full justify-items-center">
+      <section className="flex flex-wrap justify-center items-center gap-16 w-full justify-items-center p-2">
         <div className="card w-96 glass">
           <figure className="h-[250px]">
             <img
