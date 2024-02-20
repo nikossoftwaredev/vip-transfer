@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen bg-transparent ">
+    <main className="flex h-full items-center justify-center">
       <figure className="absolute w-full top-0 -z-10 brightness-50">
         <img
           className="max-h-screen w-full object-cover"

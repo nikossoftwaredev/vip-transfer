@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <span className="bg-base-300 opacity-80 sticky">
+        <span className="bg-base-300 opacity-80 w-full">
           <ul className="p-2 w-full flex flex-wrap flex-col md:flex-row gap-6 justify-center items-center mr-1">
             <img src="/images/logo.png" className="h-[50px]" />
             {headerLinks.map((linkConfig, idx) => {

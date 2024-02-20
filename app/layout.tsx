@@ -14,9 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="halloween">
-      <body className="bg-transparent">
+      <body className="bg-transparent min-h-screen h-screen flex flex-col">
         <Header />
-        {children}
+        <div className="grow">{children}</div>
       </body>
     </html>
   );
