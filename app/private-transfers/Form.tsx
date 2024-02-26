@@ -38,11 +38,6 @@ const formInputs: InputFieldProps[] = [
     dataField: "email",
   },
   {
-    inputType: "date",
-    dataField: "date",
-    placeholder: "Date",
-  },
-  {
     inputType: "number",
     placeholder: "Phone number",
     icon: <MdLocalPhone />,
@@ -59,28 +54,50 @@ const formInputs: InputFieldProps[] = [
 
 const Form = () => {
   return (
-    <form className="flex flex-col">
+    <form className="flex flex-col gap-8 card bg-base-300 p-8">
       <Calendar />
-      <div className="grid gap-2 sm:grid-cols-1 md:grid-cols-2">
-        {formInputs.map(
-          ({ dataField, icon, inputType, placeholder, colSpan, required }) => (
-            <label
-              className={`form-control w-full  ${
-                colSpan ? "col-span-full" : ""
-              }`}
-            >
-              <span className="w-full flex items-center gap-2 input input-bordered">
-                <input
-                  required={required}
-                  placeholder={placeholder}
-                  type={inputType}
-                  className="grow w-full"
-                />
-                {icon}
-              </span>
-            </label>
-          )
-        )}
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-2 ">
+        <span className="col-span-full flex items-center gap-2 input input-bordered">
+          <input
+            autoComplete="name"
+            placeholder="Full Name"
+            type="text"
+            className="grow w-full"
+          />
+          <MdPerson />
+        </span>
+        <select className="select select-bordered max-w-xs">
+          <option disabled selected>
+            Pick up location
+          </option>
+          <option>Airport</option>
+          <option>Peireus</option>
+          <option>Google Api</option>
+        </select>
+        <select className="select select-bordered  max-w-xs">
+          <option disabled selected>
+            Drop of location
+          </option>
+          <option>Airport</option>
+          <option>Peireus</option>
+          <option>Google Api</option>
+        </select>
+        <span className="w-full flex items-center gap-2 input input-bordered">
+          <input placeholder="Email" type="text" className="grow w-full" />
+          <MdAlternateEmail />
+        </span>
+        <span className="w-full flex items-center gap-2 input input-bordered">
+          <input
+            placeholder="Phone number"
+            type="text"
+            className="grow w-full"
+          />
+          <MdLocalPhone />
+        </span>
+        <textarea
+          placeholder="Comments"
+          className="col-span-full textarea textarea-bordered"
+        />
       </div>
       <button type="submit" className="btn btn-primary mt-4">
         Book now!
